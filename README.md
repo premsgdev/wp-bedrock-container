@@ -21,7 +21,7 @@ You can use this repo as a template for starting similar Bedrock-based projects.
   - Accessible on Docker network as `kummaatty-mysql`
   - DB name/user/password configurable in `.env`
 
-- **App container (`kummaatty-app`)**
+- **App container **
   - Built from `Dockerfile` using `richarvey/nginx-php-fpm` base image
   - Runs **nginx** + **php-fpm** (supervisor)
   - Serves Bedrock from `/var/www/html/web`
@@ -78,5 +78,6 @@ You **do not** need PHP or Composer installed locally.
 
 ```bash
 cd ~/project          # or wherever you keep your projects
-git clone <REPO_URL> 
+git clone <REPO_URL> <folder>
+cd <folder>
 make bedrock-init
