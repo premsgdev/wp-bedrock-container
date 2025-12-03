@@ -81,3 +81,32 @@ cd ~/project          # or wherever you keep your projects
 git clone <REPO_URL> <folder>
 cd <folder>
 make bedrock-init
+```
+
+### 3.1. Environment file
+If not already present, create .env from the Bedrock and update values
+
+### Remember to update your project name in Make file as well!
+
+
+## 4. Running the Stack
+
+### 4.1 Clone the repository
+    ```bash
+    docker compose up -d
+    ```
+### 4.2 Build the PHP-FPM + Nginx image
+    ```bash
+    make build
+    ```
+### 4.3 Install PHP dependencies via Composer (inside Docker)
+    ```bash
+    make composer-install
+    ```
+### 4.4 Start the application container
+    ```bash
+    make start
+    ```
+
+Happy hacking 👨‍💻🚀
+This setup is designed so you can focus on building the WordPress/Bedrock site itself, while Docker handles PHP, webserver, and database for you.
