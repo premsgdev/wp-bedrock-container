@@ -92,21 +92,21 @@ If not already present, create .env from the Bedrock and update values
 ## 4. Running the Stack
 
 ### 4.1 Clone the repository
-    ```bash
-    docker compose up -d
-    ```
+```bash
+docker compose up -d
+```
 ### 4.2 Build the PHP-FPM + Nginx image
-    ```bash
-    make build
-    ```
+```bash
+make build
+```
 ### 4.3 Install PHP dependencies via Composer (inside Docker)
-    ```bash
-    make composer-install
-    ```
+```bash
+make composer-install
+```
 ### 4.4 Start the application container
-    ```bash
-    make start
-    ```
+```bash
+make start
+```
 
-Happy hacking 👨‍💻🚀
+### Happy hacking 👨‍💻🚀
 This setup is designed so you can focus on building the WordPress/Bedrock site itself, while Docker handles PHP, webserver, and database for you.
