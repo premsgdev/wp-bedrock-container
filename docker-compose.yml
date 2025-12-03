@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: kummaatty-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: kummaatty
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: wp_password
+      MYSQL_ROOT_PASSWORD: root_password
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - kummaatty-net
+
+  portainer:
+    image: portainer/portainer-ce:latest 
+    container_name: kummatty_portainer
+    restart: always
+    ports:
+      - "9000:9000" 
+    volumes:
+      - portainer_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  db_data:
+  portainer_data:
+
+networks:
+  kummaatty-net:
+    name: kummaatty-net
+    driver: bridge
