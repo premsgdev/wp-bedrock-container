@@ -91,7 +91,7 @@ If not already present, create .env from the Bedrock and update values
 
 ## 4. Running the Stack
 
-### 4.1 Clone the repository
+### 4.1 Start the MySQL container
 ```bash
 docker compose up -d
 ```
