@@ -8,6 +8,15 @@ WP_PORT = 8080
 build:
 	docker build --target dev -t $(IMAGE_NAME) .
 
+# One-time: create a Bedrock project INSIDE the container
+# (run this only in an empty directory the first time)
+bedrock-init:
+	docker run --rm \
+		-v $(PWD):/var/www/html \
+		-w /var/www/html \
+		$(IMAGE_NAME) \
+		composer create-project roots/bedrock .
+
 composer-install:
 	docker run --rm \
 		-v $(PWD):/var/www/html \
